@@ -12,7 +12,7 @@ ownership {
     validateOwnership = true
     generateGithubOwners = true
     generateMissingOwnershipFiles = true
-    defaultOwnerForMissingOwnershipFiles = "@warting"
+    defaultOwnerForMissingOwnershipFiles = "@jalalkun"
 }
 
 androidGitVersion {
@@ -20,19 +20,18 @@ androidGitVersion {
 }
 
 
-val PUBLISH_GROUP_ID: String by extra("se.warting.perfect-android-library")
+val PUBLISH_GROUP_ID: String by extra("com.jalalkun.session")
 val PUBLISH_VERSION: String by extra(androidGitVersion.name().replace("v", ""))
 val PUBLISH_ARTIFACT_ID by extra("core")
 
 apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
-val composeVersion = "1.1.0-beta04"
 android {
-    compileSdk = 31
 
+    compileSdk = 33
     defaultConfig {
         minSdk = 21
-        targetSdk = 31
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        targetSdk = 33
     }
 
     buildTypes {
@@ -50,7 +49,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = composeVersion
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
 
     kotlinOptions {
@@ -73,6 +72,8 @@ android {
         checkGeneratedSources = false
         sarifOutput = file("../lint-results-lib.sarif")
     }
+    buildToolsVersion = "33.0.1"
+    namespace = "com.jalalkun.session"
 }
 
 kotlin {
@@ -82,16 +83,8 @@ kotlin {
 
 
 dependencies {
-
-    // implementation("androidx.compose.runtime:runtime:$composeVersion")
-    // implementation("androidx.compose.ui:ui:$composeVersion")
-
-    // val coroutineVersion = "1.5.2"
-    // implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
-
-    // implementation("androidx.core:core-ktx:1.6.10")
-    // implementation("androidx.appcompat:appcompat:1.3.1")
-    // implementation("com.google.android.material:material:1.4.0")
+    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("androidx.security:security-crypto-ktx:1.1.0-alpha04")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")

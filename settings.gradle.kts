@@ -21,6 +21,6 @@ buildCache {
 //        jcenter() // Warning: this repository is going to shut down soon
 //    }
 //}
-rootProject.name = "Perfect android library template"
+rootProject.name = "Session Library Project"
 include(":app")
-include(":lib")
+include(":session")
