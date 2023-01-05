@@ -1,0 +1,5 @@
+<lint>
+    <issue id="InvalidPackage">
+        <ignore regexp="kotlinx.coroutines.debug.AgentPremain"/>
+    </issue>
+</lint>

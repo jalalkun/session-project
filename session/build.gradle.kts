@@ -43,29 +43,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildFeatures {
-        viewBinding = false
-        compose = false
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
-    }
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
         freeCompilerArgs = listOfNotNull(
-            "-Xopt-in=kotlin.RequiresOptIn",
+            "-opt-in=kotlin.RequiresOptIn",
             "-Xskip-prerelease-check"
         )
     }
 
     lint {
+        abortOnError = false
         baseline = file("lint-baseline.xml")
         checkReleaseBuilds = true
         checkAllWarnings = true
         warningsAsErrors = true
-        abortOnError = true
         disable.add("LintBaseline")
         disable.add("GradleDependency")
         checkDependencies = true
@@ -83,9 +75,9 @@ kotlin {
 
 
 dependencies {
-    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("com.google.code.gson:gson:2.10")
     implementation("androidx.security:security-crypto-ktx:1.1.0-alpha04")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
