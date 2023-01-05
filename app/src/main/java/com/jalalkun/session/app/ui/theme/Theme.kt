@@ -3,14 +3,17 @@ package com.jalalkun.session.app.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.dynamicDarkColorScheme
+import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-
 
 private val LightColors = lightColorScheme(
     surfaceTint = md_theme_light_surfaceTint,
@@ -41,7 +44,6 @@ private val LightColors = lightColorScheme(
     primaryContainer = md_theme_light_primaryContainer,
     primary = md_theme_light_primary,
 )
-
 
 private val DarkColors = darkColorScheme(
     surfaceTint = md_theme_dark_surfaceTint,
@@ -92,7 +94,7 @@ fun SessionAppComposeTheme(
         SideEffect {
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
             WindowCompat.getInsetsController(
-                (view.context as Activity).window,view
+                (view.context as Activity).window, view
             ).isAppearanceLightStatusBars = darkTheme
         }
     }

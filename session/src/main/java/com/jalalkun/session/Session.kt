@@ -13,7 +13,7 @@ object Session {
         .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
         .build()
 
-    fun init(context: Context, fileName: String = "=") {
+    fun init(context: Context, fileName: String) {
         preferences = EncryptedSharedPreferences.create(
             context,
             fileName,
@@ -49,14 +49,14 @@ object Session {
 
     fun saveFloat(tag: String, value: Float) {
         checkInit()
-        with(preferences.edit()){
+        with(preferences.edit()) {
             putFloat(tag, value)
             apply()
         }
     }
 
     fun <T> saveModel(tag: String, value: T) {
-        with(preferences.edit()){
+        with(preferences.edit()) {
             putString(tag, Gson().toJson(value))
             apply()
         }
@@ -98,7 +98,7 @@ object Session {
     fun <T> getModel(tag: String): T {
         checkInit()
         val json: String = preferences.getString(tag, "") ?: ""
-        if (json.isEmpty()) throw Exception("Please check your tag, the value is empty")
+        if (json.isEmpty()) throw IllegalArgumentException("Please check your tag, the value is empty")
         val type = object : TypeToken<T?>() {}.type
         return Gson().fromJson(json, type)
     }
@@ -120,6 +120,8 @@ object Session {
     }
 
     private fun checkInit() {
-        if (!this::preferences.isInitialized) throw Exception("Please init this Session in your Application")
+        if (!this::preferences.isInitialized) {
+            throw IllegalArgumentException("Please init this Session in your Application")
+        }
     }
 }
