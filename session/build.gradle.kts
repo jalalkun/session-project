@@ -43,14 +43,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    buildFeatures {
-        viewBinding = false
-        compose = false
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
-    }
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
