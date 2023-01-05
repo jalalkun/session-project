@@ -1,0 +1,27 @@
+public final class com/jalalkun/session/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public final class com/jalalkun/session/Session {
+	public static final field INSTANCE Lcom/jalalkun/session/Session;
+	public final fun clear ()V
+	public final fun getBoolean (Ljava/lang/String;Z)Z
+	public static synthetic fun getBoolean$default (Lcom/jalalkun/session/Session;Ljava/lang/String;ZILjava/lang/Object;)Z
+	public final fun getFloat (Ljava/lang/String;)F
+	public final fun getInt (Ljava/lang/String;)I
+	public final fun getLong (Ljava/lang/String;)J
+	public final fun getModel (Ljava/lang/String;)Ljava/lang/Object;
+	public final fun getString (Ljava/lang/String;)Ljava/lang/String;
+	public final fun init (Landroid/content/Context;Ljava/lang/String;)V
+	public final fun remove (Ljava/lang/String;)V
+	public final fun saveBoolean (Ljava/lang/String;Z)V
+	public final fun saveFloat (Ljava/lang/String;F)V
+	public final fun saveInt (Ljava/lang/String;I)V
+	public final fun saveLong (Ljava/lang/String;J)V
+	public final fun saveModel (Ljava/lang/String;Ljava/lang/Object;)V
+	public final fun saveString (Ljava/lang/String;Ljava/lang/String;)V
+}
+
