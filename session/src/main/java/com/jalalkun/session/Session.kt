@@ -13,7 +13,7 @@ object Session {
         .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
         .build()
 
-    fun init(context: Context, fileName: String = "${BuildConfig.LIBRARY_PACKAGE_NAME}_${BuildConfig.BUILD_TYPE}") {
+    fun init(context: Context, fileName: String = "=") {
         preferences = EncryptedSharedPreferences.create(
             context,
             fileName,
