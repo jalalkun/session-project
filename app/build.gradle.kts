@@ -46,11 +46,11 @@ android {
     }
 
     lint {
+        abortOnError = false
         baseline = file("lint-baseline.xml")
         checkReleaseBuilds = true
         checkAllWarnings = true
         warningsAsErrors = true
-        abortOnError = false
         disable.add("LintBaseline")
         disable.add("GradleDependency")
         checkDependencies = true
