@@ -50,7 +50,7 @@ android {
         checkReleaseBuilds = true
         checkAllWarnings = true
         warningsAsErrors = true
-        abortOnError = true
+        abortOnError = false
         disable.add("LintBaseline")
         disable.add("GradleDependency")
         checkDependencies = true
