@@ -67,7 +67,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:31.1.1"))
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("androidx.compose.ui:ui:1.3.2")
+    implementation("androidx.compose.ui:ui:1.3.3")
     implementation("androidx.compose.material3:material3:1.0.1")
     implementation("androidx.compose.material3:material3-window-size-class:1.0.1")
     implementation("androidx.compose.ui:ui-tooling-preview:1.3.2")
